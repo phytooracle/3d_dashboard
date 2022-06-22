@@ -1,12 +1,15 @@
 import sys, glob, os, pdb
 from itertools import groupby
 from operator import itemgetter
-import pandas as pd
+from pathlib import Path
 import numpy as np
-import subprocess
-from config import Config
+import pandas as pd
+import altair as alt
 import re
-from operator import itemgetter
+import subprocess
+
+from config import Config
+import altair_figures
 import dashboard_html
 
 MIN_OBS = 5
@@ -21,7 +24,8 @@ data_category_strings = {
 
 if __name__ == "__main__":
 
-    conf = Config() # This contains command line arguments, and phytooracle_data classes.
+    conf = Config(season=11) # This contains command line arguments,
+                             # and phytooracle_data classes.
     conf.BASE_URL = BASE_URL
 
     #########################################################
