@@ -1,8 +1,22 @@
 import sys, os, pdb
 import ftplib
+import webdav3
 from webdav3.client import Client
 import webdav_credentials
 import re
+
+"""
+Example usage:
+
+import file_inspector
+fs = file_inspector.WebDav(
+            season="season_11_sorghum_yr_2020",
+            level="level_2",
+            sensor="scanner3DTop"
+     )
+fs.date_files()
+
+"""
 
 def season_level_sensor_arg_handler(f):
     """
@@ -10,14 +24,15 @@ def season_level_sensor_arg_handler(f):
        my_class_function(self, arg1=self.arg1)
     ... which isn't allowed in python.
     """
-    def replace_none_with_self_default(self, **kwargs):
+    def replace_none_with_self_default(self, *args, **kwargs):
         if 'season' not in kwargs:
             kwargs['season'] = self.season
         if 'level' not in kwargs:
             kwargs['level'] = self.level
         if 'sensor' not in kwargs:
             kwargs['sensor'] = self.sensor
-        return f(self, **kwargs)
+        #breakpoint()
+        return f(self, *args, **kwargs)
     return replace_none_with_self_default
 
 
@@ -33,6 +48,9 @@ class FileInspector(object):
     def get_file_list(self, path):
         pass
 
+    def get_file_info(self, path):
+        pass
+
     def connect(self):
         pass
 
@@ -46,25 +64,42 @@ class FileInspector(object):
         p = self.sensor_path(season=season, level=level, sensor=sensor)
         print(f"Looking for files in: {p}")
         files = self.get_file_list(p)
-        print(files)
+        return files
 
     @season_level_sensor_arg_handler
-    def dates(self, season=None, level=None, sensor=None, filter_test_dates=True):
+    def date_files(self, season=None, level=None, sensor=None, filter_test_dates=True):
+        """
+        returns a list of tuples: ('path_to_date_file/', 'date')
+        return example:
+            [
+                ('2020-07-28/', '2020-07-28'),
+                ('2020-07-30/', '2020-07-30'),
+                ('SuperDuper_2020-07-30.tgz', '2020-07-30'),
+                ('2020-08-03/', '2020-08-03')
+            ]
+        """
 
-        p = self.sensor_path(season=season, level=level, sensor=sensor)
-        print(f"Looking for dates in: {p}")
-        files = self.get_file_list(p)
+        pth = self.sensor_path(season=season, level=level, sensor=sensor)
+        print(f"Looking for dates in: {pth}")
+        all_files = self.get_file_list(pth)
+        p = re.compile(".*(\d\d\d\d-\d\d-\d\d).*\/")
+        #ds is list of tuples: ('path_to_date_file/', 'date')
+        ds = [(os.path.join(pth,x), p.match(x).group(1)) for x in all_files if p.match(x)]
 
-#
-#        breakpoint()
-#        #date = date_dir[0:-1]
-#
-#        """
-#        if date[0] != '2':
-#            continue
-#        if len(date) != 10:
-#            continue
-#        """
+        if filter_test_dates:
+            p = re.compile(r"^2222-")
+            ds = [x for x in ds if not p.match(x[1])]
+
+        return ds
+
+    @season_level_sensor_arg_handler
+    def file_info(self, relative_path, season=None, level=None, sensor=None, filter_test_dates=True):
+        base_path = self.sensor_path(season=season, level=level, sensor=sensor)
+        path = os.path.join(base_path, relative_path) 
+        info = self.get_file_info(path)
+#        #res = self.client.resource(path)
+#        #info = res.info()
+        return info
 
 
 class WebDav(FileInspector):
@@ -82,6 +117,16 @@ class WebDav(FileInspector):
         # [1:] because first entry is parent dir...
         files = self.client.list(path)[1:]
         return files
+
+    def get_file_info(self, path):
+        print(f"Getting info for {path}")
+        try:
+            res = self.client.resource(path)
+            info = res.info()
+            return info
+        except webdav3.exceptions.RemoteResourceNotFound:
+            return None
+
 
 
 class FTP(FileInspector):
