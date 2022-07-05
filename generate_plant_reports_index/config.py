@@ -33,7 +33,7 @@ class Config(object):
         parser.add_argument('-d',
                             '--date',
                             help='The 3D scan date for processing',
-                            default = "2020-01-22_50pct_clustered_segmented",
+                            default = "2020-07-08",
                             metavar='date',
                             required=False)
 
@@ -41,7 +41,7 @@ class Config(object):
                             '--season',
                             help='The season (e.g. 10)',
                             metavar='season',
-                            default=10,
+                            default=11,
                             type=int,
                             required=False)
 

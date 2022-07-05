@@ -5,19 +5,19 @@ def plant_data_row(plant_data, BASE_URL, conf):
     return f"""
     <tr>
     <td>
-        <a href='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/index.html'>{plant_data.name}</a><br>
+        <a href='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/index.html'>{plant_data.name}</a><br>
         <small>
 <pre>
-{plant_data[['treatment', 'n_obs', 'double_lettuce']]}
+{plant_data[['n_obs']]}
 <a href='http://www.google.com/maps/place/{plant_data['mean_lat']},{plant_data['mean_lon']}/@{plant_data['mean_lat']},{plant_data['mean_lon']},20z/data=!3m1!1e3'>{plant_data['mean_lat']},{plant_data['mean_lon']}</a>
 </pre>
         </small>
         
     </td>
-    <td><a href='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/combined_heatmap.png'></a></td>
-    <td><a href='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/combined_multiway_registered.gif'></a><input type="checkbox" name="crop" onchange="do_crop_checkbox()"/></td>
-    <td><a href='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/combined_multiway_registered_soil_segmentation.gif'></a><input type="checkbox" name="ground" onchange="do_ground_checkbox()" /></td>
-    <td><a href='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/plant_reports/{plant_data.name}/combined_multiway_registered_soil_segmentation_cluster.gif'></a><input type="checkbox" name="segmentation" onchange="do_segmentation_checkbox()" /></td>
+    <td><a href='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/combined_heatmap.png'></a></td>
+    <td><a href='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/combined_multiway_registered.gif'></a><input type="checkbox" name="crop" onchange="do_crop_checkbox()"/></td>
+    <!--<td><a href='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/combined_multiway_registered_soil_segmentation.gif'></a><input type="checkbox" name="ground" onchange="do_ground_checkbox()" /></td>-->
+    <!--<td><a href='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/index.html'><img style="max-width: 300; max-height: 300px" src='{BASE_URL}/{conf.args.date}/individual_plants_out/plant_reports/{plant_data.name}/combined_multiway_registered_soil_segmentation_cluster.gif'></a><input type="checkbox" name="segmentation" onchange="do_segmentation_checkbox()" /></td>-->
     """
 
 
@@ -33,7 +33,8 @@ def create_random_plants_page(plants, conf, n=50, filename="random.html"):
         <h1>{n} Random Valid Plants : {conf.args.date}</h1>
         <table>
 
-        <tr><th></th><th></th><th>Geocorection<th>Soil<br>Identification</th><th>Plant<br>Segmentation</th></tr>
+        <!--<tr><th></th><th></th><th>Geocorection<th>Soil<br>Identification</th><th>Plant<br>Segmentation</th></tr>-->
+        <tr><th></th><th>Z-axis heatmap</th><th>Pointcloud</th></tr>
     """
 
     if len(plants) < n:

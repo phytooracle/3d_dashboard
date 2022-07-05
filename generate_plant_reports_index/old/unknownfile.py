@@ -54,6 +54,73 @@ class Sensor3D(BaseSensor):
         self.pr_log = fetch_processing_log_entry(self.date)
 
 
+class PipelineSensorProgress(object):
+
+    def __init__(season=None, level=None, sensor=None, use_saved_info=True, save_info=True):
+        '''
+        use_saved_info=True   ->  load dataframe from csv downloaded from cyverse.
+        use_saved_info=False  ->  Create dataframe
+        '''
+        from urllib.error import HTTPError
+
+        saved_info_found = False
+
+        if use_saved_info:
+            try:
+                scan_df = pd.read_csv(BASE_URL + f"/{season}/{level}/{sensor}/pipeline_sensor_progress.csv")
+                saved_info_found = True
+            except HTTPError:
+                saved_info_found = False
+
+
+        fs = file_inspector.FileInspector(
+                    season=season,
+                    level=level,
+                    sensor=sensor
+        )
+
+    #    def create_df(season, level, sensor, force_overwrite=False):
+    #
+    #        if not force_overwrite:
+    #            if os.path.isfile("outputs/pipeline_data_products.csv") :
+    #                scan_df = pd.read_csv("outputs/pipeline_data_products.csv")
+    #                return scan_df
+    #
+    #
+    #        dates = []
+    #        dataproduct_labels = []
+    #        urls = []
+    #
+    #        # Level 0
+    #        # - We confirm the existance of level_0 data just from the date file
+    #        level_0_dates = sorted([x[1] for x in fs.date_files(level='level_0')])
+    #        dates += level_0_dates
+    #        dataproduct_labels += [f"3d_level_0"] * len(level_0_dates)
+    #        urls += make_urls_for_dates(level_0_dates, season=season, level='level_0', sensor=sensor)
+    #
+    #        # Beyond Level 0
+    #        # - we have to check certain files to see if certain pipeline steps have completed.
+    #        # - we use the Date_3D.pipeline_step_completed() to check 
+    #        for l in ['level_1', 'landmark_selection', 'level_2', 'plant_reports']:
+    #
+    #            d = [x for x in level_0_dates if data_inspector.Date_3D(x, file_inspector=fs).pipeline_step_completed(l)]
+    #            dates += d
+    #            dataproduct_labels += [f"3d_{l}"] * len(d)
+    #            urls += make_urls_for_dates(d, season=season, level=l, sensor=sensor)
+    #            #urls += 
+    #            # [f"https://data.cyverse.org/dav-anon/iplant/projects/phytooracle/{season}/{level}/{sensor}/{x}/
+    #
+    #        rgb_dates = sorted([x[1] for x in fs.date_files(level='level_0', sensor="stereoTop")])
+    #        rgb_labels     = ["rgb_level_0"] * len(rgb_dates)
+    #        rgb_urls = [f"https://data.cyverse.org/dav-anon/iplant/projects/phytooracle/{season}/level_0/stereoTop/"] * len(rgb_dates)
+    #
+    #        dates += rgb_dates
+    #        dataproduct_labels += rgb_labels
+    #        urls += rgb_urls
+    #
+    #        scan_df = pd.DataFrame(list(zip(dates, dataproduct_labels, urls)), columns=['date', 'level', 'url'])
+    #        scan_df.to_csv("outputs/pipeline_data_products.csv")
+    #        return scan_df
 
 
 class Level2_3D_Stats(Level2, Sensor3D):
