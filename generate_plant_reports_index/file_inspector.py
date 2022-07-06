@@ -138,7 +138,7 @@ class FileInspector(object):
         pth = self.sensor_path(season=season, level=level, sensor=sensor)
         print(f"Looking for dates in: {pth}")
         all_files = self.client.get_file_list(pth)
-        breakpoint()
+        #breakpoint()
         p = re.compile(".*(\d\d\d\d-\d\d-\d\d).*")
         #ds is list of tuples: ('path_to_date_file/', 'date')
         ds = [[os.path.join(pth,x), p.match(x).group(1)] for x in all_files if p.match(x)]

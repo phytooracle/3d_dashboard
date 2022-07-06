@@ -94,7 +94,10 @@ if __name__ == "__main__":
     #plant_dirs = [x for x in files_in_directory if re.search(r'.+_\d+$', x)]
 
     _, date_dir, ddo = [x for x in date_data_objects if x[0] == date][0]
-    plant_dirs = [x.rstrip("/") for x in ddo.plant_reports['contents']]
+    #plant_dirs = [x.rstrip("/") for x in ddo.plant_reports['contents']]
+    plant_dir_pattern = re.compile(".*\d{10,}.*/")
+    plant_dirs = [x for x in ddo.plant_reports['contents'] if plant_dir_pattern.match(x)]
+    plant_dirs = [x.rstrip("/") for x in plant_dirs]
     print(f"   ... found {len(plant_dirs)} plant directories")
 
     ######################
@@ -129,6 +132,10 @@ if __name__ == "__main__":
 #            genotype = "_".join(plant_id.split("_")[0:2])
 
         plant_data = df.loc[plant_id]   # fails if plant isn't in df.  We like that.
+#        try:
+#            plant_data = df.loc[plant_id]   # fails if plant isn't in df.  We like that.
+#        except:
+#            breakpoint()
 
         # additional sanity check
 #        if plant_data.genotype != genotype:

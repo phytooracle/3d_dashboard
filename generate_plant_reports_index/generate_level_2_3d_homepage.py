@@ -9,6 +9,9 @@ from config import Config
 import file_inspector
 import data_inspector
 
+print("Starting.")
+USE_PICKLE = True
+
 ##################################################
 #  Get directories from cyverse that are dates   #
 ##################################################
@@ -27,7 +30,6 @@ fs = file_inspector.FileInspector(
 #    Get dataframe from RGB cluster csv file     #
 ##################################################
 
-USE_PICKLE = False
 
 conf = Config(season=11) # This contains command line arguments, and phytooracle_data classes.
 rgb_df = conf.rgb.df
@@ -77,6 +79,10 @@ index_html = f"""
         <!--<th># Plants in RGB csv</th>-->
 """
 
+##################################################
+#               LOOP THROUGH DATES               #
+##################################################
+
 for date, date_dir, ddo in date_data_objects:
     ##################################################
     #             plant_reports.tar size             #
@@ -96,11 +102,16 @@ for date, date_dir, ddo in date_data_objects:
 
     ##################################################
     #                   date link                    #
+    # aka link to plant_reports
     ##################################################
+    #date_html = f"{date}" # Default, no link.
+    date_dir_link = f"<a href='{date}/individual_plants_out/', title='Link to individual_plants_out directory'>{date}</a>"
+    dashboard_link = f"(Reports not generated for this date)"
     if ddo.plant_reports['exists']:
-        date_html = f"<a href='{date}/individual_plants_out/plant_reports/index.html'>{date}</a>"
-    else:
-        date_html = f"{date}"
+        if 'index.html' in ddo.plant_reports['contents']:
+            dashboard_link = f"<a href='{date}/individual_plants_out/plant_reports/index.html', title='Link to dashboard index.html'>{date} Dashboard</a>"
+        else:
+            dashboard_link = f"<a href='{date}/individual_plants_out/plant_reports/', title='Dashboard not generated for this date, link to reports dir.'>{date} plant_reports directory listing</a>"
 
     ##################################################
     #       Number of plants in plant reports        #
@@ -124,7 +135,7 @@ for date, date_dir, ddo in date_data_objects:
         'Landmark Selection Status',
         'Individual.1',
         'Finish Date.1',
-        'Notes',
+        'Notes.1',
     ]
     pr_log_coi_3 = [
         #'Scan Date',
@@ -143,20 +154,29 @@ for date, date_dir, ddo in date_data_objects:
     index_html += f"""
 
     <tr>
-        <th><h3>{date_html}</h3></th>
+        <td>
+        <h3>{date_dir_link}</h3>
+        <li>{dashboard_link}
+        </td>
         <td>{plant_reports_size}</td>
         <td>{segmentation_pointclouds_tar_size}</td>
         <td>{n_plants_in_plant_reports}</td>
         <!--<td>{n_plants_in_rgb_csv}</td>-->
     </tr>
+    <!--
     <tr>
-        <td colspan=4><small>
-        <small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_1].to_markdown(tablefmt="grid")}</pre></small>
-        <small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_2].to_markdown(tablefmt="grid")}</pre></small>
-        <small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_3].to_markdown(tablefmt="grid")}</pre></small>
-        </small></td>
+        <td colspan=4>
+            {dashboard_link}
+            <small>
+                Changes to google sheets broke this.  Will return later
+            </small>
+        </td>
     </tr>
+    -->
     """
+        #<small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_1].to_markdown(tablefmt="grid")}</pre></small>
+        #<small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_2].to_markdown(tablefmt="grid")}</pre></small>
+        #<small><pre>{ddo.pr_log.set_index('Scan Date')[pr_log_coi_3].to_markdown(tablefmt="grid")}</pre></small>
 
 index_html += f"""
     </table>

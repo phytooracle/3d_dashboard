@@ -122,6 +122,7 @@ class Date_3D(Sensor3D):
         self.plant_reports = dict()
         self.plant_reports['exists'] = False
         self.plant_reports['contents'] = self.fs.files(relative_path=f"{self.date}/individual_plants_out/plant_reports/")
+        #self.plant_reports['plants'] = 
         if len(self.plant_reports['contents']) > 1:
             self.plant_reports['exists'] = True
 
