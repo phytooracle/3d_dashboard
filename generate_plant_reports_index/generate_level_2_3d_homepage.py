@@ -106,12 +106,12 @@ for date, date_dir, ddo in date_data_objects:
     ##################################################
     #date_html = f"{date}" # Default, no link.
     date_dir_link = f"<a href='{date}/individual_plants_out/', title='Link to individual_plants_out directory'>{date}</a>"
-    dashboard_link = f"(Reports not generated for this date)"
+    dashboard_link = f"(please ibun plant_reports)"
     if ddo.plant_reports['exists']:
         if 'index.html' in ddo.plant_reports['contents']:
             dashboard_link = f"<a href='{date}/individual_plants_out/plant_reports/index.html', title='Link to dashboard index.html'>{date} Dashboard</a>"
         else:
-            dashboard_link = f"<a href='{date}/individual_plants_out/plant_reports/', title='Dashboard not generated for this date, link to reports dir.'>{date} plant_reports directory listing</a>"
+            dashboard_link = f"No Dashboard. <a href='{date}/individual_plants_out/plant_reports/', title='Dashboard not generated for this date, link to reports dir.'>(reports dir)</a>"
 
     ##################################################
     #       Number of plants in plant reports        #
