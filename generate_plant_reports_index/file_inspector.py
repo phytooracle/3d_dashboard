@@ -1,9 +1,7 @@
 import sys, os, pdb
 import ftplib
-import webdav3
-from webdav3.client import Client
-import webdav_credentials
 import re
+import subprocess
 
 """
 Example usage:
@@ -32,7 +30,66 @@ class FileInspectorClient(object):
         return f"{_f:.2f}{x}" # Whatever TB.
 
 
+class IrodsIquestClient(FileInspectorClient):
+
+
+    def __init__(self, client_options=None):
+        #super().__init__(client_options=client_options)
+        pass
+
+    def check_file_exists(self, path):
+        print(f"Checking to see if path exists: {path}")
+        if path[-1] == '/':
+            path = path[:-1]
+        sql_string = f"SELECT COLL_NAME WHERE COLL_NAME = '{path}'"
+        file_list = self.do_file_sql(sql_string)
+        if len(file_list) == 0:
+            return False
+        if len(file_list) == 1:
+            return True
+        raise Exception(f"file_inspector check_file_exists() found more than one file")
+
+    def get_file_list(self, path):
+        # Remove trailing slash, IRODS database stores dir name without slash
+        if path[-1] == '/':
+            path = path[:-1]
+        sql_string = f"SELECT COLL_NAME WHERE COLL_PARENT_NAME = '{path}'"
+        self.file_list = self.do_file_sql(sql_string)
+        return self.file_list
+
+    def do_file_sql(self, sql_string):
+        """
+        Runs any SQL that SELECTS COLL_NAME and returns the parsed/cleaned results
+        """
+        run_result = subprocess.run(["iquest", sql_string], stdout=subprocess.PIPE).stdout
+        lines = run_result.decode('utf-8').splitlines()
+        filepath_pattern = "COLL_NAME = (.+)"
+        files = [match.group(1) for x in lines if (match := re.match(filepath_pattern, x))]
+        return files
+
+    def get_file_info(self, path):
+        print(f"Getting info for {path}")
+        try:
+            res = self.client.resource(path)
+            info = res.info()
+            info['size'] = self.human_filesize(info['size'])
+            return info
+        except webdav3.exceptions.RemoteResourceNotFound:
+            return None
+
+
+
+
 class WebDavClient(FileInspectorClient):
+    """
+    We do this try block so that this library will work even if webdav3 isn't installed
+    """
+    try:
+        import webdav3
+        from webdav3.client import Client
+        import webdav_credentials
+    except:
+        webdav3 = None
     def __init__(self, client_options=None):
         #super().__init__(client_options=client_options)
         if client_options is None:
