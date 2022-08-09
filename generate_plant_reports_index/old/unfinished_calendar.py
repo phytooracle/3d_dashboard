@@ -39,8 +39,8 @@ import altair as alt
 alt.renderers.enable('altair_viewer')
 
 cal_chart = alt.Chart(scan_df).mark_rect().encode(
-        #x = alt.X(field='date', type='temporal', title='Scan Date'),
-        #y = alt.Y(field='level', type='nominal', title='Level')
+        x = alt.X(field='date', type='temporal', title='Scan Date'),
+        y = alt.Y(field='level', type='nominal', title='Level')
 )
 
 #nulls = cal_chart.transform_filter(

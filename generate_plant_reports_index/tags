@@ -9,110 +9,125 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
-2020-06-23	index.html	/^        <th><h3><a href='2020-06-23\/individual_plants_out\/plant_reports'>2020-06-23<\/a><\/h3>/;"	j
-2020-06-25	index.html	/^        <th><h3>2020-06-25<\/h3><\/th>$/;"	j
-2020-06-26	index.html	/^        <th><h3><a href='2020-06-26\/individual_plants_out\/plant_reports'>2020-06-26<\/a><\/h3>/;"	j
-2020-06-30	index.html	/^        <th><h3><a href='2020-06-30\/individual_plants_out\/plant_reports'>2020-06-30<\/a><\/h3>/;"	j
-2020-07-03	index.html	/^        <th><h3><a href='2020-07-03\/individual_plants_out\/plant_reports'>2020-07-03<\/a><\/h3>/;"	j
-2020-07-06	index.html	/^        <th><h3>2020-07-06<\/h3><\/th>$/;"	j
-2020-07-07	index.html	/^        <th><h3><a href='2020-07-07\/individual_plants_out\/plant_reports'>2020-07-07<\/a><\/h3>/;"	j
-2020-07-08	index.html	/^        <th><h3><a href='2020-07-08\/individual_plants_out\/plant_reports'>2020-07-08<\/a><\/h3>/;"	j
-2020-07-13	index.html	/^        <th><h3>2020-07-13<\/h3><\/th>$/;"	j
-2020-07-14	index.html	/^        <th><h3>2020-07-14<\/h3><\/th>$/;"	j
-2020-07-15	index.html	/^        <th><h3>2020-07-15<\/h3><\/th>$/;"	j
-2020-07-16	index.html	/^        <th><h3><a href='2020-07-16\/individual_plants_out\/plant_reports'>2020-07-16<\/a><\/h3>/;"	j
-2020-07-17	index.html	/^        <th><h3><a href='2020-07-17\/individual_plants_out\/plant_reports'>2020-07-17<\/a><\/h3>/;"	j
-2020-07-21	index.html	/^        <th><h3>2020-07-21<\/h3><\/th>$/;"	j
-2020-07-25	index.html	/^        <th><h3>2020-07-25<\/h3><\/th>$/;"	j
-2020-07-30	index.html	/^        <th><h3>2020-07-30<\/h3><\/th>$/;"	j
-2020-08-01	index.html	/^        <th><h3>2020-08-01<\/h3><\/th>$/;"	j
-2020-08-03	index.html	/^        <th><h3>2020-08-03<\/h3><\/th>$/;"	j
-2020-08-05	index.html	/^        <th><h3>2020-08-05<\/h3><\/th>$/;"	j
-2020-08-06	index.html	/^        <th><h3>2020-08-06<\/h3><\/th>$/;"	j
 AZMet	phytooracle_data/azmet.py	/^class AZMet(object):$/;"	c
 BASE_URL	config.py	/^    BASE_URL = "https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle\/season_10_l/;"	v	class:Config
+BASE_URL	data_inspector.py	/^BASE_URL = f"https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle"$/;"	v
+BASE_URL	generate_level_2_3d_date_pages.py	/^BASE_URL = f"https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle\/{season}\/{lev/;"	v
 BASE_URL	old/generate_3D_plant_reports_for_date.py	/^BASE_URL = "https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle\/season_10_lettu/;"	v
+BASE_URL	old/pipeline_progress.py	/^BASE_URL = f"https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle"$/;"	v
+BASE_URL	old/unknownfile.py	/^BASE_URL = f"https:\/\/data.cyverse.org\/dav-anon\/iplant\/projects\/phytooracle"$/;"	v
 BaseLevel	data_inspector.py	/^class BaseLevel(object):$/;"	c
+BaseLevel	old/unknownfile.py	/^class BaseLevel(object):$/;"	c
 BaseSensor	data_inspector.py	/^class BaseSensor(object):$/;"	c
+BaseSensor	old/unknownfile.py	/^class BaseSensor(object):$/;"	c
 Config	config.py	/^class Config(object):$/;"	c
 DO_BB_COMPARISON	old/generate_3D_plant_reports_for_date.py	/^DO_BB_COMPARISON = False$/;"	v
 Date_3D	data_inspector.py	/^class Date_3D(Sensor3D):$/;"	c
+Date_3D	old/unknownfile.py	/^class Date_3D(Sensor3D):$/;"	c
 FTPClient	file_inspector.py	/^class FTPClient(FileInspectorClient):$/;"	c
 FileInspector	file_inspector.py	/^class FileInspector(object):$/;"	c
 FileInspectorClient	file_inspector.py	/^class FileInspectorClient(object):$/;"	c
 Level1BaseClass	phytooracle_data/level1.py	/^class Level1BaseClass(object):$/;"	c
 Level2	data_inspector.py	/^class Level2(BaseLevel):$/;"	c
+Level2	old/unknownfile.py	/^class Level2(BaseLevel):$/;"	c
 Level2_3D_Stats	data_inspector.py	/^class Level2_3D_Stats(Level2, Sensor3D):$/;"	c
+Level2_3D_Stats	old/unknownfile.py	/^class Level2_3D_Stats(Level2, Sensor3D):$/;"	c
 MIN_OBS	config.py	/^    MIN_OBS = 5$/;"	v	class:Config
+MIN_OBS	generate_level_2_3d_date_pages.py	/^MIN_OBS = 5$/;"	v
 MIN_OBS	old/generate_3D_plant_reports_for_date.py	/^MIN_OBS = 5$/;"	v
 Ortho	phytooracle_data/stereoTop.py	/^class Ortho(Level1BaseClass):$/;"	c
+PipelineScanner3DTopProgress	old/pipeline_progress.py	/^class PipelineScanner3DTopProgress(PipelineSensorProgress):$/;"	c
+PipelineSensorProgress	old/pipeline_progress.py	/^class PipelineSensorProgress(object):$/;"	c
+PipelineSensorProgress	old/unknownfile.py	/^class PipelineSensorProgress(object):$/;"	c
 RGB_Data	phytooracle_data/rgb.py	/^class RGB_Data(object):$/;"	c
 RGB_Ind_Images	phytooracle_data/rgb_ind_images.py	/^class RGB_Ind_Images(object):$/;"	c
 RGB_Single_Images	phytooracle_data/rgb_single_images.py	/^class RGB_Single_Images(object):$/;"	c
 Scanner3dTop	phytooracle_data/scanner3dTop.py	/^class Scanner3dTop(Level1BaseClass):$/;"	c
 Season	phytooracle_data/seasons.py	/^class Season(object):$/;"	c
 Sensor3D	data_inspector.py	/^class Sensor3D(BaseSensor):$/;"	c
-USE_PICKLE	generate_level_2_3d_homepage.py	/^USE_PICKLE = False$/;"	v
+Sensor3D	old/unknownfile.py	/^class Sensor3D(BaseSensor):$/;"	c
+USE_PICKLE	generate_level_2_3d_homepage.py	/^USE_PICKLE = True$/;"	v
 Verify	phytooracle_data/verify.py	/^class Verify(object):$/;"	c
 WebDavClient	file_inspector.py	/^class WebDavClient(FileInspectorClient):$/;"	c
+_	generate_level_2_3d_date_pages.py	/^    _, date_dir, ddo = [x for x in date_data_objects if x[0] == date][0]$/;"	v
 __init__	config.py	/^    def __init__(self, season=10):$/;"	m	class:Config
 __init__	data_inspector.py	/^    def __init__(self, date, file_inspector=None, date_dir=None, level="season_11_sorghum_yr_202/;"	m	class:Level2_3D_Stats
 __init__	data_inspector.py	/^    def __init__(self, date, file_inspector=None, date_dir=None, season="season_11_sorghum_yr_20/;"	m	class:Date_3D
 __init__	file_inspector.py	/^    def __init__(self, client_options=None):$/;"	m	class:FTPClient
 __init__	file_inspector.py	/^    def __init__(self, client_options=None):$/;"	m	class:WebDavClient
-__init__	file_inspector.py	/^    def __init__(self, season=None, level=None, sensor=None, client=WebDavClient, client_options/;"	m	class:FileInspector
+__init__	file_inspector.py	/^    def __init__(self, season=None, level='level_0', sensor=None, client=WebDavClient, client_op/;"	m	class:FileInspector
+__init__	old/pipeline_progress.py	/^    def __init__(self, season=None, sensor=None, use_saved_info=True, save_info=True):$/;"	m	class:PipelineSensorProgress
+__init__	old/pipeline_progress.py	/^    def __init__(self, season=None, use_saved_info=True, save_info=True):$/;"	m	class:PipelineScanner3DTopProgress
+__init__	old/unknownfile.py	/^    def __init__(season=None, level=None, sensor=None, use_saved_info=True, save_info=True):$/;"	m	class:PipelineSensorProgress
+__init__	old/unknownfile.py	/^    def __init__(self, date, file_inspector=None, date_dir=None, level="season_11_sorghum_yr_202/;"	m	class:Level2_3D_Stats
+__init__	old/unknownfile.py	/^    def __init__(self, date, file_inspector=None, date_dir=None, season="season_11_sorghum_yr_20/;"	m	class:Date_3D
 __init__	phytooracle_data/azmet.py	/^    def __init__(self, season=None, start_date=None, end_date=None, station="06"):$/;"	m	class:AZMet
 __init__	phytooracle_data/level1.py	/^    def __init__(self, season=None, force_download=False):$/;"	m	class:Level1BaseClass
 __init__	phytooracle_data/rgb.py	/^    def __init__(self, season=None, force_download=False, remove_anomalous_dates=True):$/;"	m	class:RGB_Data
 __init__	phytooracle_data/rgb_ind_images.py	/^    def __init__(self, season=None, force_download=False, number_plants=5, sequence_dates=None):$/;"	m	class:RGB_Ind_Images
 __init__	phytooracle_data/rgb_single_images.py	/^    def __init__(self, season=None, force_download=False, sequence_dates=None):$/;"	m	class:RGB_Single_Images
 __init__	phytooracle_data/seasons.py	/^    def __init__(self, season=None):$/;"	m	class:Season
+_o	generate_level_2_3d_date_pages.py	/^    _o=[]$/;"	v
 all_plots_contain_only_one_genotype	phytooracle_data/verify.py	/^    def all_plots_contain_only_one_genotype(df):$/;"	m	class:Verify
+all_valid_plants	generate_level_2_3d_date_pages.py	/^    all_valid_plants = []$/;"	v
 all_valid_plants	old/generate_3D_plant_reports_for_date.py	/^    all_valid_plants = []$/;"	v
 all_valid_plants	old/generate_plant_reports.py	/^        all_valid_plants = []$/;"	v
-alt	altair_figures.py	/^import altair as alt$/;"	I	nameref:module:altair
-alt	didntwork.py	/^import altair as alt$/;"	I	nameref:module:altair
-alt	figure_sensor_dates.py	/^import altair as alt$/;"	I	nameref:module:altair
+alt	generate_level_2_3d_date_pages.py	/^import altair as alt$/;"	I	nameref:module:altair
+alt	interactive_pipeline_progress_figure.py	/^import altair as alt$/;"	I	nameref:module:altair
+alt	old/altair_figures.py	/^import altair as alt$/;"	I	nameref:module:altair
 alt	old/generate_3D_plant_reports_for_date.py	/^import altair as alt$/;"	I	nameref:module:altair
 alt	old/generate_plant_reports.py	/^import altair as alt$/;"	I	nameref:module:altair
-aly	altair_figures.py	/^import altair_ally as aly$/;"	I	nameref:module:altair_ally
+alt	old/unfinished_calendar.py	/^import altair as alt$/;"	I	nameref:module:altair
+aly	old/altair_figures.py	/^import altair_ally as aly$/;"	I	nameref:module:altair_ally
 azmet_data_dir	phytooracle_data/azmet.py	/^azmet_data_dir = os.path.join(raw_data_dir, "azmet")$/;"	v
 base_data_path	phytooracle_data/level1.py	/^    def base_data_path(self):$/;"	m	class:Level1BaseClass
-cal_chart	didntwork.py	/^cal_chart = alt.Chart(scan_df).mark_rect().encode($/;"	v
+cal_chart	old/unfinished_calendar.py	/^cal_chart = alt.Chart(scan_df).mark_rect().encode($/;"	v
 calculate_S	phytooracle_data/rgb.py	/^    def calculate_S(self, df):$/;"	m	class:RGB_Data
 check_file_exists	file_inspector.py	/^    def check_file_exists(self, path):$/;"	m	class:WebDavClient
 client	old/filesystem.py	/^client = Client(options)$/;"	v
+conf	generate_level_2_3d_date_pages.py	/^    conf = Config(season=11) # This contains command line arguments,$/;"	v
 conf	generate_level_2_3d_homepage.py	/^conf = Config(season=11) # This contains command line arguments, and phytooracle_data classes.$/;"	v
 conf	old/generate_3D_plant_reports_for_date.py	/^    conf = Config(season=11) # This contains command line arguments,$/;"	v
 conf	old/generate_plant_reports.py	/^    conf = Config() # This contains command line arguments, and phytooracle_data classes.$/;"	v
-conf	s11.py	/^conf = Config(season=11) # This contains command line arguments, and phytooracle_data classes.$/;"	v
-create_chart	figure_sensor_dates.py	/^def create_chart(scan_df):$/;"	f
-create_df	figure_sensor_dates.py	/^def create_df(season, level, sensor, force_overwrite=True):$/;"	f
+conf	old/s11.py	/^conf = Config(season=11) # This contains command line arguments, and phytooracle_data classes.$/;"	v
+create_chart	interactive_pipeline_progress_figure.py	/^def create_chart(scan_df):$/;"	f
+create_df	interactive_pipeline_progress_figure.py	/^def create_df(season, level, sensor, force_overwrite=False):$/;"	f
 create_random_plants_page	dashboard_html.py	/^def create_random_plants_page(plants, conf, n=50, filename="random.html"):$/;"	f
 csv_path	build_pointcloud_stats_csv.py	/^    csv_path = os.path.join(plant_reports_dir, test_plant, "pointcloud_stats.csv")$/;"	v
 cyverse_path	old/generate_plant_reports.py	/^        cyverse_path = date_dict['cyverse_path']$/;"	v
+dashboard_link	generate_level_2_3d_homepage.py	/^            dashboard_link = f"<a href='{date}\/individual_plants_out\/plant_reports\/index.html/;"	v
+dashboard_link	generate_level_2_3d_homepage.py	/^    dashboard_link = f"(please ibun plant_reports)"$/;"	v
 data_category_strings	config.py	/^    data_category_strings = {$/;"	v	class:Config
+data_category_strings	generate_level_2_3d_date_pages.py	/^data_category_strings = {$/;"	v
 data_category_strings	old/generate_3D_plant_reports_for_date.py	/^data_category_strings = {$/;"	v
+data_counts	generate_level_2_3d_date_pages.py	/^    data_counts = {$/;"	v
 data_counts	old/generate_3D_plant_reports_for_date.py	/^    data_counts = {$/;"	v
 data_counts	old/generate_plant_reports.py	/^        data_counts = {$/;"	v
+date	generate_level_2_3d_date_pages.py	/^    date = conf.args.date$/;"	v
 date	old/filesystem.py	/^    date = date_dir[0:-1]$/;"	v
 date	old/generate_plant_reports.py	/^        date         = date_dict['date']$/;"	v
+date_data_objects	generate_level_2_3d_date_pages.py	/^    date_data_objects           = _o[0]['date_data_objects']$/;"	v
 date_data_objects	generate_level_2_3d_homepage.py	/^    date_data_objects = []$/;"	v
-date_data_objects	generate_level_2_3d_homepage.py	/^    date_data_objects = objects[0]$/;"	v
+date_data_objects	generate_level_2_3d_homepage.py	/^    date_data_objects = objects[0]['date_data_objects']$/;"	v
+date_data_objects_timestamp	generate_level_2_3d_date_pages.py	/^    date_data_objects_timestamp = _o[0]['timestamp']$/;"	v
+date_dir	generate_level_2_3d_date_pages.py	/^    _, date_dir, ddo = [x for x in date_data_objects if x[0] == date][0]$/;"	v
+date_dir_link	generate_level_2_3d_homepage.py	/^    date_dir_link = f"<a href='{date}\/individual_plants_out\/', title='Link to individual_plant/;"	v
 date_dirs	build_pointcloud_stats_csv.py	/^date_dirs = fs.date_files()$/;"	v
+date_dirs	generate_level_2_3d_homepage.py	/^    date_dirs = fs.date_files()$/;"	v
 date_files	file_inspector.py	/^    def date_files(self, season=None, level=None, sensor=None, filter_test_dates=True):$/;"	m	class:FileInspector
-date_html	generate_level_2_3d_homepage.py	/^        date_html = f"<a href='{date}\/individual_plants_out\/plant_reports'>{date}<\/a>"$/;"	v
 date_is_between	phytooracle_data/__init__.py	/^def date_is_between(date, start_date, end_date):$/;"	f
 dates	phytooracle_data/level1.py	/^    dates     = []$/;"	v	class:Level1BaseClass
 dates_to_process	old/generate_plant_reports.py	/^dates_to_process = [$/;"	v
+ddo	generate_level_2_3d_date_pages.py	/^    _, date_dir, ddo = [x for x in date_data_objects if x[0] == date][0]$/;"	v
 ddo	generate_level_2_3d_homepage.py	/^        ddo = data_inspector.Level2_3D_Stats(date, date_dir=date_dir, file_inspector=fs)$/;"	v
 df	build_pointcloud_stats_csv.py	/^    df = pd.read_csv("https:\/\/data.cyverse.org\/dav\/iplant\/projects\/phytooracle\/"+csv_path/;"	v
+df	generate_level_2_3d_date_pages.py	/^    df = conf.rgb.df.groupby(by="plant_name").agg($/;"	v
 df	old/generate_3D_plant_reports_for_date.py	/^    df = conf.rgb.df.groupby(by="plant_name").agg($/;"	v
 df	old/generate_3D_plant_reports_for_date.py	/^    df = df.astype({ "double_lettuce" : bool })$/;"	v
 df	old/generate_plant_reports.py	/^    df = conf.rgb.df.groupby(by="plant_name").agg($/;"	v
 df	old/generate_plant_reports.py	/^    df = df.astype({ "double_lettuce" : bool })$/;"	v
-df	s11.py	/^df = conf.rgb.df.groupby(by="plant_name").agg($/;"	v
-dir_contents	s11.py	/^    dir_contents = []$/;"	v
+df	old/s11.py	/^df = conf.rgb.df.groupby(by="plant_name").agg($/;"	v
+dir_contents	old/s11.py	/^    dir_contents = []$/;"	v
 download_untar_heatmap_for_date	phytooracle_data/scanner3dTop.py	/^    def download_untar_heatmap_for_date(self,use_date):$/;"	m	class:Scanner3dTop
 end_date	phytooracle_data/seasons.py	/^    def end_date(self):$/;"	m	class:Season
 env_file	phytooracle_data/azmet.py	/^env_file = dotenv.find_dotenv()$/;"	v
@@ -124,6 +139,7 @@ env_file	phytooracle_data/scanner3dTop.py	/^env_file = dotenv.find_dotenv(usecwd
 env_file	phytooracle_data/stereoTop.py	/^env_file = dotenv.find_dotenv(usecwd=True)$/;"	v
 eto_columns	phytooracle_data/azmet.py	/^    eto_columns = [$/;"	v	class:AZMet
 fetch_processing_log_entry	data_inspector.py	/^def fetch_processing_log_entry(date,$/;"	f
+fetch_processing_log_entry	old/unknownfile.py	/^def fetch_processing_log_entry(date,$/;"	f
 file_exists	file_inspector.py	/^    def file_exists(self, season=None, level=None, sensor=None, relative_path=None, path=None):$/;"	m	class:FileInspector
 file_info	file_inspector.py	/^    def file_info(self, season=None, level=None, sensor=None, relative_path=None, filter_test_da/;"	m	class:FileInspector
 file_list	phytooracle_data/level1.py	/^    file_list = []$/;"	v	class:Level1BaseClass
@@ -131,18 +147,24 @@ files	file_inspector.py	/^    def files(self, season=None, level=None, sensor=No
 files_in_directory	old/generate_3D_plant_reports_for_date.py	/^    files_in_directory = [x.split("\/")[-1] for x in ils_lines if "  C- " in x]$/;"	v
 files_in_directory	old/generate_plant_reports.py	/^        files_in_directory = [x.split("\/")[-1] for x in ils_lines if "  C- " in x]$/;"	v
 find_common_dates_between_sensors	phytooracle_data/__init__.py	/^def find_common_dates_between_sensors(I1, I2, threshold=2, datetime_format_string="%Y-%m-%d"):$/;"	f
+find_dates_to_unbin	data_inspector.py	/^def find_dates_to_unbin(scan_df, file_inspector=None):$/;"	f
+find_dates_to_unbin	old/unknownfile.py	/^def find_dates_to_unbin(scan_df, file_inspector=None):$/;"	f
 find_nearest_date	phytooracle_data/__init__.py	/^def find_nearest_date(list_of_dates, target_date, season=10):$/;"	f
 fs	build_pointcloud_stats_csv.py	/^fs = file_inspector.FileInspector($/;"	v
-fs	didntwork.py	/^fs = file_inspector.FileInspector($/;"	v
+fs	generate_level_2_3d_date_pages.py	/^    fs = file_inspector.FileInspector($/;"	v
 fs	generate_level_2_3d_homepage.py	/^fs = file_inspector.FileInspector($/;"	v
-fs	s11.py	/^    fs = file_inspector.FTP(server='sdf.org', username=credentials.username, password=credential/;"	v
-generate_eda	altair_figures.py	/^def generate_eda(df, df_name, path):$/;"	f
+fs	old/s11.py	/^    fs = file_inspector.FTP(server='sdf.org', username=credentials.username, password=credential/;"	v
+fs	old/unfinished_calendar.py	/^fs = file_inspector.FileInspector($/;"	v
+generate_eda	old/altair_figures.py	/^def generate_eda(df, df_name, path):$/;"	f
 genotype	old/generate_3D_plant_reports_for_date.py	/^        genotype = "_".join(plant_id.split("_")[:-1])$/;"	v
 genotype	old/generate_plant_reports.py	/^            genotype = "_".join(plant_id.split("_")[:-1])$/;"	v
+genotype_dict	generate_level_2_3d_date_pages.py	/^    genotype_dict = {}$/;"	v
 genotype_dict	old/generate_3D_plant_reports_for_date.py	/^    genotype_dict = {}$/;"	v
 genotype_dict	old/generate_plant_reports.py	/^        genotype_dict = {}$/;"	v
+genotype_html	generate_level_2_3d_date_pages.py	/^            genotype_html = f"""$/;"	v
 genotype_html	old/generate_3D_plant_reports_for_date.py	/^            genotype_html = f"""$/;"	v
 genotype_html	old/generate_plant_reports.py	/^                genotype_html = f"""$/;"	v
+genotype_index_file	generate_level_2_3d_date_pages.py	/^            genotype_index_file = f"{g}.html"$/;"	v
 genotype_index_file	old/generate_3D_plant_reports_for_date.py	/^            genotype_index_file = f"{g}.html"$/;"	v
 genotype_index_file	old/generate_plant_reports.py	/^                genotype_index_file = f"{g}.html"$/;"	v
 get_command	phytooracle_data/rgb.py	/^def get_command():$/;"	f
@@ -152,15 +174,20 @@ get_dates	phytooracle_data/stereoTop.py	/^    def get_dates(self):$/;"	m	class:O
 get_file_info	data_inspector.py	/^    def get_file_info(self):$/;"	m	class:Date_3D
 get_file_info	data_inspector.py	/^    def get_file_info(self):$/;"	m	class:Level2_3D_Stats
 get_file_info	file_inspector.py	/^    def get_file_info(self, path):$/;"	m	class:WebDavClient
+get_file_info	old/unknownfile.py	/^    def get_file_info(self):$/;"	m	class:Date_3D
+get_file_info	old/unknownfile.py	/^    def get_file_info(self):$/;"	m	class:Level2_3D_Stats
 get_file_list	file_inspector.py	/^    def get_file_list(self, path):$/;"	m	class:WebDavClient
 get_file_list	phytooracle_data/level1.py	/^    def get_file_list(self):$/;"	m	class:Level1BaseClass
 get_images_of_plant	phytooracle_data/__init__.py	/^def get_images_of_plant(plant_name):$/;"	f
 get_ortho_for_date	phytooracle_data/stereoTop.py	/^    def get_ortho_for_date(self, date):$/;"	m	class:Ortho
 get_plant_reports_summary	data_inspector.py	/^    def get_plant_reports_summary(self):$/;"	m	class:Date_3D
 get_plant_reports_summary	data_inspector.py	/^    def get_plant_reports_summary(self):$/;"	m	class:Level2_3D_Stats
+get_plant_reports_summary	old/unknownfile.py	/^    def get_plant_reports_summary(self):$/;"	m	class:Date_3D
+get_plant_reports_summary	old/unknownfile.py	/^    def get_plant_reports_summary(self):$/;"	m	class:Level2_3D_Stats
 get_preprocessed_downsampled_merged_for_date	phytooracle_data/scanner3dTop.py	/^    def get_preprocessed_downsampled_merged_for_date(self,scan_date):$/;"	m	class:Scanner3dTop
 get_preprocessed_metadata_for_date	phytooracle_data/scanner3dTop.py	/^    def get_preprocessed_metadata_for_date(self,scan_date):$/;"	m	class:Scanner3dTop
 get_processing_log_entry	data_inspector.py	/^    def get_processing_log_entry(self):$/;"	m	class:Sensor3D
+get_processing_log_entry	old/unknownfile.py	/^    def get_processing_log_entry(self):$/;"	m	class:Sensor3D
 handle_command_line_aruments	config.py	/^    def handle_command_line_aruments(self):$/;"	m	class:Config
 hu_columns	phytooracle_data/azmet.py	/^    hu_columns = [$/;"	v	class:AZMet
 hull_volumes_df	old/generate_plant_reports.py	/^        hull_volumes_df = pd.read_csv("https:\/\/data.cyverse.org\/dav-anon" + f"\/{cyverse_path/;"	v
@@ -175,12 +202,13 @@ irods_base_data_path	phytooracle_data/level1.py	/^    def irods_base_data_path(s
 irods_preprocessing_path	phytooracle_data/scanner3dTop.py	/^    def irods_preprocessing_path(self, scan_date):$/;"	m	class:Scanner3dTop
 irods_preprocessing_transformation_json_file_path	phytooracle_data/scanner3dTop.py	/^    def irods_preprocessing_transformation_json_file_path(self, scan_date):$/;"	m	class:Scanner3dTop
 level	build_pointcloud_stats_csv.py	/^level  = "level_2"$/;"	v
-level	didntwork.py	/^level  = "level_2"$/;"	v
-level	figure_sensor_dates.py	/^level  = "level_2"$/;"	v
+level	generate_level_2_3d_date_pages.py	/^level  = "level_2"$/;"	v
 level	generate_level_2_3d_homepage.py	/^level  = "level_2"$/;"	v
-level_0_dates	didntwork.py	/^level_0_dates = sorted([x[1] for x in fs.date_files(level='level_0')])$/;"	v
-level_1_dates	didntwork.py	/^level_1_dates = sorted([x[1] for x in fs.date_files(level='level_1')])$/;"	v
-level_2_dates	didntwork.py	/^level_2_dates = sorted([x[1] for x in fs.date_files()])$/;"	v
+level	interactive_pipeline_progress_figure.py	/^level  = "level_2"$/;"	v
+level	old/unfinished_calendar.py	/^level  = "level_2"$/;"	v
+level_0_dates	old/unfinished_calendar.py	/^level_0_dates = sorted([x[1] for x in fs.date_files(level='level_0')])$/;"	v
+level_1_dates	old/unfinished_calendar.py	/^level_1_dates = sorted([x[1] for x in fs.date_files(level='level_1')])$/;"	v
+level_2_dates	old/unfinished_calendar.py	/^level_2_dates = sorted([x[1] for x in fs.date_files()])$/;"	v
 level_2_files	old/filesystem.py	/^level_2_files = client.list(sensor_path)[1:]   # [1:] because first entry is parent dir.$/;"	v
 local_base_data_path	phytooracle_data/level1.py	/^    def local_base_data_path(self):$/;"	m	class:Level1BaseClass
 local_preprocessing_path	phytooracle_data/scanner3dTop.py	/^    def local_preprocessing_path(self, scan_date):$/;"	m	class:Scanner3dTop
@@ -195,8 +223,10 @@ log	phytooracle_data/scanner3dTop.py	/^log = logging.getLogger(__name__)$/;"	v
 log	phytooracle_data/seasons.py	/^log = logging.getLogger(__name__)$/;"	v
 log	phytooracle_data/stereoTop.py	/^log = logging.getLogger(__name__)$/;"	v
 make_plot_level_df	phytooracle_data/rgb.py	/^    def make_plot_level_df(self, df):$/;"	m	class:RGB_Data
-make_urls_for_dates	figure_sensor_dates.py	/^def make_urls_for_dates(dates, season, level, sensor):$/;"	f
-marker_files	data_inspector.py	/^    marker_files = {$/;"	v	class:Date_3D
+make_urls_for_dates	interactive_pipeline_progress_figure.py	/^def make_urls_for_dates(dates, season=season, level=level, sensor=sensor):$/;"	f
+make_urls_for_dates	old/pipeline_progress.py	/^    def make_urls_for_dates(dates, season=None, level=None, sensor=None):$/;"	m	class:PipelineScanner3DTopProgress
+make_urls_for_dates	old/pipeline_progress.py	/^    def make_urls_for_dates(dates, season=None, level=None, sensor=None):$/;"	m	class:PipelineSensorProgress
+meta_html	generate_level_2_3d_date_pages.py	/^    meta_html = f"""$/;"	v
 meta_html	old/generate_3D_plant_reports_for_date.py	/^    meta_html = f"""$/;"	v
 meta_html	old/generate_plant_reports.py	/^        meta_html = f"""$/;"	v
 n_plants_in_plant_reports	generate_level_2_3d_homepage.py	/^    n_plants_in_plant_reports = len(ddo.plant_reports['contents'])$/;"	v
@@ -204,11 +234,13 @@ n_plants_in_rgb_csv	generate_level_2_3d_homepage.py	/^    n_plants_in_rgb_csv = 
 name	phytooracle_data/seasons.py	/^    def name(self):$/;"	m	class:Season
 np	build_pointcloud_stats_csv.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	dashboard_html.py	/^import numpy as np$/;"	I	nameref:module:numpy
-np	didntwork.py	/^import numpy as np$/;"	I	nameref:module:numpy
-np	figure_sensor_dates.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	generate_level_2_3d_date_pages.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	generate_level_2_3d_homepage.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	interactive_pipeline_progress_figure.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	old/generate_3D_plant_reports_for_date.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	old/generate_plant_reports.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	old/s11.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	old/unfinished_calendar.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	phytooracle_data/__init__.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	phytooracle_data/azmet.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	phytooracle_data/rgb.py	/^import numpy as np$/;"	I	nameref:module:numpy
@@ -216,7 +248,6 @@ np	phytooracle_data/rgb_ind_images.py	/^import numpy as np$/;"	I	nameref:module:
 np	phytooracle_data/rgb_single_images.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	phytooracle_data/scanner3dTop.py	/^import numpy as np$/;"	I	nameref:module:numpy
 np	phytooracle_data/stereoTop.py	/^import numpy as np$/;"	I	nameref:module:numpy
-np	s11.py	/^import numpy as np$/;"	I	nameref:module:numpy
 number_observations_by_date	phytooracle_data/__init__.py	/^def number_observations_by_date(df):$/;"	f
 number_plants_with_n_observations	phytooracle_data/__init__.py	/^def number_plants_with_n_observations(df):$/;"	f
 objects	generate_level_2_3d_homepage.py	/^    objects = []$/;"	v
@@ -230,13 +261,17 @@ parsed_dotenv	phytooracle_data/scanner3dTop.py	/^parsed_dotenv = dotenv.dotenv_v
 parsed_dotenv	phytooracle_data/stereoTop.py	/^parsed_dotenv = dotenv.dotenv_values()$/;"	v
 path	old/generate_3D_plant_reports_for_date.py	/^    path = f"\/iplant\/home\/shared\/phytooracle\/season_10_lettuce_yr_2020\/level_1\/scanner3DT/;"	v
 path	old/generate_plant_reports.py	/^        path = f"\/iplant\/home\/shared\/phytooracle\/season_10_lettuce_yr_2020\/level_1\/scanne/;"	v
-pd	altair_figures.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	build_pointcloud_stats_csv.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	data_inspector.py	/^import pandas as pd$/;"	I	nameref:module:pandas
-pd	didntwork.py	/^import pandas as pd$/;"	I	nameref:module:pandas
-pd	figure_sensor_dates.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	generate_level_2_3d_date_pages.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	interactive_pipeline_progress_figure.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	old/altair_figures.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	old/generate_3D_plant_reports_for_date.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	old/generate_plant_reports.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	old/pipeline_progress.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	old/s11.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	old/unfinished_calendar.py	/^import pandas as pd$/;"	I	nameref:module:pandas
+pd	old/unknownfile.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	phytooracle_data/__init__.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	phytooracle_data/azmet.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	phytooracle_data/rgb.py	/^import pandas as pd$/;"	I	nameref:module:pandas
@@ -245,11 +280,15 @@ pd	phytooracle_data/rgb_single_images.py	/^import pandas as pd$/;"	I	nameref:mod
 pd	phytooracle_data/scanner3dTop.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	phytooracle_data/seasons.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pd	phytooracle_data/stereoTop.py	/^import pandas as pd$/;"	I	nameref:module:pandas
-pd	s11.py	/^import pandas as pd$/;"	I	nameref:module:pandas
 pipeline_step_completed	data_inspector.py	/^    def pipeline_step_completed(self, step_name):$/;"	m	class:Date_3D
+pipeline_step_completed	old/unknownfile.py	/^    def pipeline_step_completed(self, step_name):$/;"	m	class:Date_3D
+plant_data	generate_level_2_3d_date_pages.py	/^        plant_data = df.loc[plant_id]   # fails if plant isn't in df.  We like that.$/;"	v
 plant_data	old/generate_3D_plant_reports_for_date.py	/^        plant_data = df.loc[plant_id]   # fails if plant isn't in df.  We like that.$/;"	v
 plant_data	old/generate_plant_reports.py	/^            plant_data = df.loc[plant_id]   # fails if plant isn't in df.  We like that.$/;"	v
 plant_data_row	dashboard_html.py	/^def plant_data_row(plant_data, BASE_URL, conf):$/;"	f
+plant_dir_pattern	generate_level_2_3d_date_pages.py	/^    plant_dir_pattern = re.compile(".*\\d{10,}.*\/")$/;"	v
+plant_dirs	generate_level_2_3d_date_pages.py	/^    plant_dirs = [x for x in ddo.plant_reports['contents'] if plant_dir_pattern.match(x)]$/;"	v
+plant_dirs	generate_level_2_3d_date_pages.py	/^    plant_dirs = [x.rstrip("\/") for x in plant_dirs]$/;"	v
 plant_dirs	old/generate_3D_plant_reports_for_date.py	/^    plant_dirs = [x for x in files_in_directory if re.search(r'.+_\\d+$', x)]$/;"	v
 plant_dirs	old/generate_plant_reports.py	/^        plant_dirs = [x for x in files_in_directory if re.search(r'.+_\\d+$', x)]$/;"	v
 plant_reports_dir	build_pointcloud_stats_csv.py	/^    plant_reports_dir = os.path.join(date_dir, "individual_plants_out", "plant_reports")$/;"	v
@@ -274,32 +313,35 @@ raw_data_dir	phytooracle_data/rgb_ind_images.py	/^raw_data_dir  = parsed_dotenv[
 raw_data_dir	phytooracle_data/rgb_single_images.py	/^raw_data_dir  = parsed_dotenv["phytooracle_data"]$/;"	v
 raw_data_dir	phytooracle_data/stereoTop.py	/^raw_data_dir  = parsed_dotenv["phytooracle_data"]$/;"	v
 raw_hourly_columns	phytooracle_data/azmet.py	/^    raw_hourly_columns = [$/;"	v	class:AZMet
-remote_base_path	s11.py	/^    remote_base_path = os.path.join("public_html", conf.rgb.season.name())$/;"	v
+remote_base_path	old/s11.py	/^    remote_base_path = os.path.join("public_html", conf.rgb.season.name())$/;"	v
 replace_none_with_self_default	file_inspector.py	/^    def replace_none_with_self_default(self, **kwargs):$/;"	f	function:season_level_sensor_arg_handler	file:
 return_plants_with_at_least_n_observations	phytooracle_data/__init__.py	/^def return_plants_with_at_least_n_observations(filtered_df, min_n):$/;"	f
 rgb	config.py	/^import phytooracle_data.rgb as rgb$/;"	I	nameref:module:phytooracle_data.rgb
 rgb_df	generate_level_2_3d_homepage.py	/^rgb_df = conf.rgb.df$/;"	v
 run_result	old/generate_3D_plant_reports_for_date.py	/^    run_result = subprocess.run(["ils", path], stdout=subprocess.PIPE).stdout$/;"	v
 run_result	old/generate_plant_reports.py	/^        run_result = subprocess.run(["ils", path], stdout=subprocess.PIPE).stdout$/;"	v
-scan_df	didntwork.py	/^scan_df = pd.DataFrame(index=season_date_range, columns=['3D_level_0', '3D_level_1', '3D_level_2/;"	v
+scan_df	interactive_pipeline_progress_figure.py	/^scan_df = create_df(season, level, sensor, force_overwrite=False)$/;"	v
+scan_df	old/unfinished_calendar.py	/^scan_df = pd.DataFrame(index=season_date_range, columns=['3D_level_0', '3D_level_1', '3D_level_2/;"	v
 scanner3dTop	config.py	/^import phytooracle_data.scanner3dTop as scanner3dTop$/;"	I	nameref:module:phytooracle_data.scanner3dTop
-scatter_matrix	altair_figures.py	/^def scatter_matrix(df, save_path):$/;"	f
+scatter_matrix	old/altair_figures.py	/^def scatter_matrix(df, save_path):$/;"	f
+scrape_info_and_build_df	old/pipeline_progress.py	/^    def scrape_info_and_build_df(self):$/;"	m	class:PipelineSensorProgress
 season	build_pointcloud_stats_csv.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
-season	didntwork.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
-season	figure_sensor_dates.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
+season	generate_level_2_3d_date_pages.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
 season	generate_level_2_3d_homepage.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
-season_11_sorghum_yr_2020/level_2/scanner3DTop	index.html	/^    <h1><a href="..\/..">season_11_sorghum_yr_2020<\/a>\/<a href="..">level_2<\/a>\/scanner3DTop/;"	h
+season	interactive_pipeline_progress_figure.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
+season	old/unfinished_calendar.py	/^season = "season_11_sorghum_yr_2020"$/;"	v
 season_config_yaml	phytooracle_data/seasons.py	/^season_config_yaml = """$/;"	v
-season_date_range	didntwork.py	/^season_date_range = pd.date_range(start=level_0_dates[0], end=level_0_dates[-1])$/;"	v
+season_date_range	old/unfinished_calendar.py	/^season_date_range = pd.date_range(start=level_0_dates[0], end=level_0_dates[-1])$/;"	v
 season_figures_path	old/generate_plant_reports.py	/^        season_figures_path = os.path.join(tag_date, "figures")$/;"	v
 season_level_sensor_arg_handler	file_inspector.py	/^def season_level_sensor_arg_handler(f):$/;"	f
 seasons	phytooracle_data/azmet.py	/^import phytooracle_data.seasons as seasons$/;"	I	nameref:module:phytooracle_data.seasons
 seasons_dict	phytooracle_data/seasons.py	/^seasons_dict = yaml.safe_load(season_config_yaml)$/;"	v
 segmentation_pointclouds_tar_size	generate_level_2_3d_homepage.py	/^        segmentation_pointclouds_tar_size = "None"$/;"	v
 sensor	build_pointcloud_stats_csv.py	/^sensor = "scanner3DTop"$/;"	v
-sensor	didntwork.py	/^sensor = "scanner3DTop"$/;"	v
-sensor	figure_sensor_dates.py	/^sensor = "scanner3DTop"$/;"	v
+sensor	generate_level_2_3d_date_pages.py	/^sensor = "scanner3DTop"$/;"	v
 sensor	generate_level_2_3d_homepage.py	/^sensor = "scanner3DTop"$/;"	v
+sensor	interactive_pipeline_progress_figure.py	/^sensor = "scanner3DTop"$/;"	v
+sensor	old/unfinished_calendar.py	/^sensor = "scanner3DTop"$/;"	v
 sensor_name	phytooracle_data/level1.py	/^    sensor_name = "foo"    # This doesn't exist.  Overwrite when you use this class.$/;"	v	class:Level1BaseClass
 sensor_name	phytooracle_data/scanner3dTop.py	/^    sensor_name = "scanner3DTop"    # This doesn't exist.  Overwrite when you use this class.$/;"	v	class:Scanner3dTop
 sensor_name	phytooracle_data/stereoTop.py	/^    sensor_name = "stereoTop"    # This doesn't exist.  Overwrite when you use this class.$/;"	v	class:Ortho
@@ -311,9 +353,9 @@ stereoTop	config.py	/^import phytooracle_data.stereoTop as stereoTop$/;"	I	namer
 tag_date	old/generate_plant_reports.py	/^        tag_date     = date_dict['tag_date']$/;"	v
 tar_upload_results	phytooracle_data/scanner3dTop.py	/^    def tar_upload_results(self,use_date):$/;"	m	class:Scanner3dTop
 test_plant	build_pointcloud_stats_csv.py	/^    test_plant = plants[1]$/;"	v
+timestamp	generate_level_2_3d_homepage.py	/^    timestamp         = objects[0]['timestamp']$/;"	v
 upload_transformation_json_file	phytooracle_data/scanner3dTop.py	/^    def upload_transformation_json_file(self, scan_date, local_json_file_path=None):$/;"	m	class:Scanner3dTop
 vis	outputs/pipeline_data_products.html	/^  <div id="vis"><\/div>$/;"	I
-vis	season.html	/^  <div id="vis"><\/div>$/;"	I
 webdav_login	webdav_credentials.py	/^webdav_login    = "equant"$/;"	v
 webdav_login	webdav_credentials_example.py	/^webdav_login    = "your_cyverse_username"$/;"	v
 webdav_password	webdav_credentials.py	/^webdav_password = "avioCn1234"$/;"	v
