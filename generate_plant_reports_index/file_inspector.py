@@ -6,13 +6,6 @@ import subprocess
 """
 Example usage:
 
-import file_inspector
-fs = file_inspector.WebDav(
-            season="season_11_sorghum_yr_2020",
-            level="level_2",
-            sensor="scanner3DTop"
-     )
-fs.date_files()
 
 """
 
@@ -37,11 +30,18 @@ class IrodsIquestClient(FileInspectorClient):
         #super().__init__(client_options=client_options)
         pass
 
-    def check_file_exists(self, path):
+    def check_path_exists(self, path):
+        if self.check_dir_exists(path):
+            return True
+        if self.check_file_exists(path):
+            return True
+        return False
+
+    def check_dir_exists(self, path):
         print(f"Checking to see if path exists: {path}")
         if path[-1] == '/':
             path = path[:-1]
-        sql_string = f"SELECT COLL_NAME WHERE COLL_NAME = '{path}'"
+        sql_string = f"SELECT COLL_NAME WHERE COLL_PARENT_NAME = '{path}'"
         file_list = self.do_file_sql(sql_string)
         if len(file_list) == 0:
             return False
@@ -49,15 +49,43 @@ class IrodsIquestClient(FileInspectorClient):
             return True
         raise Exception(f"file_inspector check_file_exists() found more than one file")
 
+    def check_file_exists(self, path):
+        print(f"Checking to see if path exists: {path}")
+        if path[-1] == '/':
+            path = path[:-1]
+        sql_string = f"SELECT DATA_NAME WHERE COLL_NAME = '{path}'"
+        file_list = self.do_file_sql(sql_string)
+        if len(file_list) == 0:
+            return False
+        if len(file_list) == 1:
+            return True
+        raise Exception(f"file_inspector check_file_exists() found more than one file")
+
+    def get_path_list(self, path):
+        dir_list = self.get_dir_list(path)
+        file_list = self.get_file_list(path)
+        self.file_list = dir_list + file_list
+        return self.file_list
+
+    def get_dir_list(self, path):
+        # Remove trailing slash, IRODS database stores dir name without slash
+        if path[-1] == '/':
+            path = path[:-1]
+        path = "/iplant/home/shared/phytooracle/" + path
+        sql_string = f"SELECT COLL_NAME WHERE COLL_PARENT_NAME = '{path}'"
+        self.dir_list = self.do_dir_sql(sql_string)
+        return self.dir_list
+
     def get_file_list(self, path):
         # Remove trailing slash, IRODS database stores dir name without slash
         if path[-1] == '/':
             path = path[:-1]
-        sql_string = f"SELECT COLL_NAME WHERE COLL_PARENT_NAME = '{path}'"
+        path = "/iplant/home/shared/phytooracle/" + path
+        sql_string = f"SELECT DATA_NAME WHERE COLL_NAME = '{path}'"
         self.file_list = self.do_file_sql(sql_string)
         return self.file_list
 
-    def do_file_sql(self, sql_string):
+    def do_dir_sql(self, sql_string):
         """
         Runs any SQL that SELECTS COLL_NAME and returns the parsed/cleaned results
         """
@@ -67,15 +95,28 @@ class IrodsIquestClient(FileInspectorClient):
         files = [match.group(1) for x in lines if (match := re.match(filepath_pattern, x))]
         return files
 
+    def do_file_sql(self, sql_string):
+        """
+        Runs any SQL that SELECTS COLL_NAME and returns the parsed/cleaned results
+        """
+        run_result = subprocess.run(["iquest", sql_string], stdout=subprocess.PIPE).stdout
+        lines = run_result.decode('utf-8').splitlines()
+        filepath_pattern = "DATA_NAME = (.+)"
+        files = [match.group(1) for x in lines if (match := re.match(filepath_pattern, x))]
+        return files
+
     def get_file_info(self, path):
         print(f"Getting info for {path}")
-        try:
-            res = self.client.resource(path)
-            info = res.info()
-            info['size'] = self.human_filesize(info['size'])
-            return info
-        except webdav3.exceptions.RemoteResourceNotFound:
-            return None
+        info = {}
+        info['size'] = "0Gb"
+        return info
+#        try:
+#            res = self.client.resource(path)
+#            info = res.info()
+#            info['size'] = self.human_filesize(info['size'])
+#            return info
+#        except webdav3.exceptions.RemoteResourceNotFound:
+#            return None
 
 
 
@@ -92,6 +133,7 @@ class WebDavClient(FileInspectorClient):
         webdav3 = None
     def __init__(self, client_options=None):
         #super().__init__(client_options=client_options)
+        import webdav_credentials
         if client_options is None:
             self.options = {
              'webdav_hostname': "https://data.cyverse.org/dav/iplant/projects/phytooracle/",
@@ -153,7 +195,7 @@ def season_level_sensor_arg_handler(f):
 
 class FileInspector(object):
 
-    def __init__(self, season=None, level='level_0', sensor=None, client=WebDavClient, client_options=None):
+    def __init__(self, season=None, level='level_0', sensor=None, client=IrodsIquestClient, client_options=None):
         self.season = season
         self.level  = level
         self.sensor = sensor
@@ -177,7 +219,7 @@ class FileInspector(object):
         if path is None:
             spth = self.sensor_path(season=season, level=level, sensor=sensor)
             path = os.path.join(spth, relative_path)
-        return self.client.check_file_exists(path)
+        return self.client.check_path_exists(path)
 
     @season_level_sensor_arg_handler
     def date_files(self, season=None, level=None, sensor=None, filter_test_dates=True):
@@ -194,8 +236,7 @@ class FileInspector(object):
 
         pth = self.sensor_path(season=season, level=level, sensor=sensor)
         print(f"Looking for dates in: {pth}")
-        all_files = self.client.get_file_list(pth)
-        #breakpoint()
+        all_files = self.client.get_path_list(pth)
         p = re.compile(".*(\d\d\d\d-\d\d-\d\d).*")
         #ds is list of tuples: ('path_to_date_file/', 'date')
         ds = [[os.path.join(pth,x), p.match(x).group(1)] for x in all_files if p.match(x)]

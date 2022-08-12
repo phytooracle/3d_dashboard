@@ -1,9 +1,7 @@
 import sys
 import argparse
 
-import phytooracle_data.scanner3dTop as scanner3dTop
-import phytooracle_data.stereoTop as stereoTop
-import phytooracle_data.rgb as rgb
+#import phytooracle_data.rgb as rgb
 
 class Config(object):
 
@@ -17,13 +15,9 @@ class Config(object):
     }
 
     def __init__(self, season=10):
-
+        pass
         #self.handle_command_line_aruments()
-    
-        #self.ortho     = stereoTop.Ortho(season=self.args.season)
-        #self.three_dee = scanner3dTop.Scanner3dTop(season=self.args.season)
-        self.rgb = rgb.RGB_Data(season=season)
-
+        #self.rgb = rgb.RGB_Data(season=season)
 
     def handle_command_line_aruments(self):
         parser = argparse.ArgumentParser(

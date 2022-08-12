@@ -4,13 +4,13 @@ import pickle
 import datetime
 
 # Local modules
-import webdav_credentials
+#import webdav_credentials
 from config import Config
 import file_inspector
 import data_inspector
 
 print("Starting.")
-USE_PICKLE = True
+USE_PICKLE = False
 
 ##################################################
 #  Get directories from cyverse that are dates   #
@@ -24,7 +24,7 @@ fs = file_inspector.FileInspector(
             season=season,
             level=level,
             sensor=sensor
-     )
+)
 
 ##################################################
 #    Get dataframe from RGB cluster csv file     #
@@ -32,7 +32,6 @@ fs = file_inspector.FileInspector(
 
 
 conf = Config(season=11) # This contains command line arguments, and phytooracle_data classes.
-rgb_df = conf.rgb.df
 
 if USE_PICKLE:
     print(f"Loading info from pickle")
@@ -117,10 +116,6 @@ for date, date_dir, ddo in date_data_objects:
     #       Number of plants in plant reports        #
     ##################################################
     n_plants_in_plant_reports = len(ddo.plant_reports['contents'])
-    ##################################################
-    #          Number of plants in rgb csv           #
-    ##################################################
-    n_plants_in_rgb_csv = rgb_df[ rgb_df.date == date ].shape[0]
     ##################################################
     #                 Processing Log                 #
     ##################################################
