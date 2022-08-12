@@ -2,9 +2,29 @@
 Generates a static website to display diagnostic figures and info for Phytooracle pipeline
 
 
-## How to run this...
+## How to run this interactively on hpc for Season 11.
 
-### 3D
+### First time...
+```
+git clone git@github.com:phytooracle/3d_dashboard.git
+salloc --nodes=1 --mem-per-cpu=4GB --ntasks=1 --time=16:00:00 --job-name=dashboard  --account=dukepauli --partition=high_priority --qos user_qos_dukepauli
+module load anaconda/2022.05
+conda create --name dashboard
+conda activate dashboard
+conda install pip
+pip install python-dotenv
+pip install numpy
+pip install pandas
+pip install matplotlib
+pip install pyyaml
+```
+
+### Then...
+```
+cd 3d_dashboard
+git checkout s11
+cd generate_plant_reports_index
+```
 
 The first step is to run
 `generate_plant_reports_index/generate_level_2_3d_homepage.py`.  This scrapes
